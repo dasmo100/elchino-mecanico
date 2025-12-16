@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>El chino Mecanico - Generador de Boletas</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <!-- jsPDF and autotable from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('Service Worker registrado'))
+    .catch(err => console.error('Error SW:', err));
+}
+</script>
+
+
+<body>
+ <header>
+  <div class="header-inner">
+    <!-- Logo (archivo logoLV.png en la misma carpeta) -->
+    <img id="logoLV" src="logoLV.png" alt="LV Mecánica - logo" />
+
+    <div class="title-block">
+      <h1>El chino Mecanico</h1>
+      <p class="subtitle">Te la deja lista pa' chambear</p>
+    </div>
+  </div>
+</header>
+
+
+  <main>
+    <section class="form-section">
+      <label>Cliente: <input id="cliente" placeholder="Nombre del cliente"></label>
+      <div id="fecha">Fecha: --/--/----</div>
+    </section>
+
+    <section class="table-section">
+      <table id="productos">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio unitario (S/.)</th>
+            <th>Cantidad</th>
+            <th>Importe (S/.)</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="controls">
+        <button id="addRow">Agregar producto</button>
+        <button id="clearRows">Limpiar</button>
+        <div class="total">TOTAL S/. <span id="total">0.00</span></div>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="generatePdf">Generar boleta</button>
+    </section>
+
+    <footer>
+      <small>El chino Mecanico - Generador de boletas</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // Register service worker for PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').catch(function(err){
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+  </script>
+</body>
+</html>
