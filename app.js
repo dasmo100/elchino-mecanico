@@ -125,7 +125,7 @@ async function cargarTTFaBase64(rutaTTF) {
   // Texto exacto del slogan adicional (pequeño)
   const LEMA_CORTO = "Te la deja lista pa' chambear";
   // Texto largo (slogan original se mantiene donde estaba)
-  const SLOGAN_EXACTO = "Realizamos mantenimiento preventivo y correctivo de motos taxi, reparación de motor y sistema eléctrico, afinado general, cambios de aceite, ajuste de cadena, luces, arranque y fallas eléctricas, dejando tu moto lista y segura para seguir chambeando.";
+  const SLOGAN_EXACTO = "Ofrecemos mantenimiento preventivo, reparación de motores y sistemas eléctricos, así como modificaciones y mejoras del motor. Dejamos su moto en perfecto estado y respaldada con garantía.";
 
   // ---------- Generar PDF (con font embedding si está disponible) ----------
   generatePdfBtn.addEventListener('click', async () => {
