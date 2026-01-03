@@ -240,7 +240,7 @@ async function cargarTTFaBase64(rutaTTF) {
     doc.text(sloganLines, margin, lemaY + 6);
 
     // Línea decorativa
-    const headerBottomY = lemaY + 6 + sloganLines.length * 4 + 6;
+    const headerBottomY = lemaY + 6 + sloganLines.length * 4 + 11;
     doc.setDrawColor(...azulOscuro);
     doc.setLineWidth(0.8);
     doc.line(margin, headerBottomY, pageW - margin, headerBottomY);
