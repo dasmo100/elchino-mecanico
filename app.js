@@ -149,8 +149,8 @@ async function cargarTTFaBase64(rutaTTF) {
     }
 
     // Cargar imágenes (logoLV y moto)
-    const logoData = await cargarImagenDataURL('logoLV.png');
-    const motoData = await cargarImagenDataURL('moto.png');
+    const logoData = await cargarImagenDataURL('moto.png');
+    const motoData = await cargarImagenDataURL('logoLV.png');
 
     // Intención: intentar cargar fuente Pacifico (o cualquier TTF con ese nombre)
     const fontBase64 = await cargarTTFaBase64('Pacifico-Regular.ttf'); // coloca Pacifico-Regular.ttf en la misma carpeta
