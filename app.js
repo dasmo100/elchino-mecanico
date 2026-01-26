@@ -123,7 +123,7 @@ async function cargarTTFaBase64(rutaTTF) {
   });
 
   // Texto exacto del slogan adicional (pequeño)
-  const LEMA_CORTO = "Te la deja lista pa' chambear";
+  const LEMA_CORTO = "Te la deja con garantía";
   // Texto largo (slogan original se mantiene donde estaba)
   const SLOGAN_EXACTO = "Ofrecemos mantenimiento preventivo, reparación de motores y sistemas eléctricos, así como modificaciones y mejoras del motor. Dejamos su moto en perfecto estado y respaldada con garantía.";
 
@@ -178,7 +178,7 @@ async function cargarTTFaBase64(rutaTTF) {
     const azulOscuro = [11, 63, 130];
     const celesteClaro = [235, 245, 255];
 
-    // Marca de agua (logo centrado y translúcido)
+    // Marca de agua moto (logo centrado y translúcido)
     if (logoData) {
       try {
         if (typeof doc.setGState === 'function') {
@@ -186,15 +186,15 @@ async function cargarTTFaBase64(rutaTTF) {
         }
       } catch (e) {}
       const watermarkSize = 110;
-      doc.addImage(logoData, 'PNG', (pageW - watermarkSize) / 2, (pageH - watermarkSize) / 2 + 10, watermarkSize, watermarkSize);
+      doc.addImage(logoData, 'PNG', (pageW - watermarkSize) / 2, (pageH - watermarkSize) / 2 + 12, watermarkSize, watermarkSize);
       try { if (typeof doc.setGState === 'function') doc.setGState(new doc.GState({ opacity: 1 })); } catch (e) {}
     }
 
-    // Moto en esquina superior derecha
+    // logo en esquina superior derecha
     let motoPresent = false;
     if (motoData) {
       motoPresent = true;
-      const motoW = 48;
+      const motoW = 40;
       const motoH = 40;
       const motoX = pageW - margin - motoW;
       const motoY = 12;
